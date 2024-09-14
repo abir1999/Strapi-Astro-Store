@@ -1,0 +1,18 @@
+---
+import { Image } from "astro:assets";
+import fetchApi from '../lib/strapi'
+
+const prodData = await fetchApi({
+    endpoint: 'products',
+    populate: 'Image',
+    wrappedByKey: 'data'
+})
+
+console.log(prodData);
+---
+<div class="card">
+    <img src="" alt="Product Image">
+    <h3>mens Shirt</h3>
+    <p>This is a brief description of the product. It provides information about the features and benefits of the item.</p>
+    <button>Add to Cart</button>
+</div>
